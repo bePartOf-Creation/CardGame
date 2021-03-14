@@ -2,6 +2,7 @@ package com.cardGame;
 
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -78,5 +79,17 @@ void testThatOurDeckOfCardsHasAListOfSuitsATCreation() {
         deck.populateDeckWithCards();
         assertEquals(52,deck.getCards().length);
 }
-
+@Test
+    void testThatCardsCanBeShuffled(){
+        deck  = new DeckOfCards();
+        deck.shuffleCard();
+        assertEquals(52,deck.getCards().length);
+}
+@Test
+    void testThatOurCardGameCanDealCard(){
+      deck  = new DeckOfCards();
+      Card dealCard = deck.DealCard();
+      assertNotNull(dealCard);
+      assertEquals(1,deck.getCurrentCard());
+}
 }
