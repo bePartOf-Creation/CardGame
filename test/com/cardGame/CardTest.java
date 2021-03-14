@@ -10,9 +10,11 @@ import static org.junit.jupiter.api.Assertions.*;
 class CardTest {
     Card card;
     DeckOfCards deck;
+    DeckOfCards deckOfCards;
     @BeforeEach
     void setUp() {
         card = new Card("face","suits");
+
     }
 
     @AfterEach
@@ -21,6 +23,7 @@ class CardTest {
 @Test
     void testThatACardNotNull(){
         card = new Card("face","suits");
+        card = new Card();
         assertNotNull(card);
     }
 @Test
@@ -73,6 +76,11 @@ void testThatOurDeckOfCardsHasAListOfSuitsATCreation() {
     String[] suits = deck.getDeckSuits();
     assertEquals(4, suits.length);
 }
+@Test
+    void testThatOurDeckCardsCanGetACard(){
+        deck  = new DeckOfCards();
+        assertNotNull(deck.getCards());
+    }
 @Test
     void testThatOurDeckCardsIsPopulatedWithCards(){
         deck  = new DeckOfCards();

@@ -7,12 +7,9 @@ public class Card {
     public Card(String face, String suits) {
         this.face = face;
         this.suits = suits;
-
     }
-
     public Card() {
     }
-
     public void setFace(String newFace) {
         this.face = newFace;
     }
